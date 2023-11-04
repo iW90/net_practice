@@ -65,7 +65,7 @@ Considerando a mesma máscara anterior `255.255.255.0`, convertida para binário
 
 Na máscara, os octetos preenchidos por bits 1 identificam a rede, e os bits 0 representam a identificação dos hosts. Por exemplo:
 
-Considerando a máscara `255.255.0.0`, os dois primeiros octetos são preenchidos por 1, significando que a parte que identifica a rede são os dois primeros octetos do IP. Supondo que o IP seja `130.10.1.1`, a parte que identifica a rede será `130.10`, e o restante é usado para subredes (por esse motivo cabem mais hosts na classe B).
+Considerando a máscara `255.255.128.0`, os dois primeiros octetos são completamente preenchidos por 1, significando que a parte que identifica a rede são os dois primeros octetos do IP. Supondo que o IP seja `130.10.1.1`, a parte que identifica a rede será `130.10`, e o restante é usado para subredes (por esse motivo cabem mais hosts na classe B). Neste caso, o "octeto misto" (aquele que define o CIDR) será o terceiro ao invés do último.
 
 #### Tabela de Subnets (classe C)
 
