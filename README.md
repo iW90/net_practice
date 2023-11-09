@@ -91,8 +91,17 @@ Exemplo:
 
 ### Switch
 
-É apenas um intermediário para conectar mais de dois dispositivos na mesma rede.
+É apenas um intermediário para conectar mais de dois dispositivos na mesma rede. Dessa forma, é necessário que todos os dispositivos conectados estejam dentro da mesma faixa de endereços.
 
 ### Router
 
-Permite o vínculo entre várias subredes, ligando umas às outras. As tabelas de roteamento (quadros roxos) orientam o caminho certo para que cada subrede possa se comunicar. Para isso é necessário passar o destino (primeira lacuna), que é a rede e a máscara para a qual a informação será enviada, e depois o salto (segunda lacuna), que é a próxima interface ao qual o roteador está conectado.
+Também se trata de um intermediário, desta vez para conectar várias redes entre si e possui uma interface para cada uma dessas redes.
+
+Como o roteador separa redes diferentes, a faixa de possíveis endereços IP em uma de suas interfaces não deve se sobrepor com a faixa de suas outras interfaces. Uma sobreposição na faixa de endereços IP implicaria que as interfaces estão na mesma rede.
+
+#### Router Table
+
+Cada elemento, seja um roteador, computador ou internet, pode possuir uma tabela de roteamento, representados por um quadro roxo neste projeto. Ela armazena uma lista com rotas para redes despecíficas.
+
+- O primeiro elemento a ser preenchido é o **destino**: Nele é especificado um endereço de rede no qual um host é o alvo final, e a máscara é representada no formato CIDR em seguida. Quando não há outra rota disponível, a rota padrão (default ou 0.0.0.0/0) é utilizada.
+- O segundo elemento a ser preenchido é o **próximo salto**: Refere-se ao endereço IP do roteador mais próximo pelo qual um pacote pode passar.
