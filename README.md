@@ -95,3 +95,4 @@ Exemplo:
 
 ### Router
 
+Permite o vínculo entre várias subredes, ligando umas às outras. As tabelas de roteamento (quadros roxos) orientam o caminho certo para que cada subrede possa se comunicar. Para isso é necessário passar o destino (primeira lacuna), que é a rede e a máscara para a qual a informação será enviada, e depois o salto (segunda lacuna), que é a próxima interface ao qual o roteador está conectado.
